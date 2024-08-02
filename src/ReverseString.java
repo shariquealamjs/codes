@@ -1,9 +1,9 @@
 import java.util.Stack;
 
-public class StringCodes {
+public class ReverseString {
 
     public static void main(String[] args) {
-        StringCodes main = new StringCodes();
+        ReverseString main = new ReverseString();
         main.getReversedString("Sharique");
         main.getReversedStringByStack("Sharique");
     }
