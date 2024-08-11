@@ -1,30 +1,32 @@
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 class TwoSum {
 
     public static void main(String[] args) {
-        int [] nums = new int []{2,7,11,15};
-        int target = 9;
-        TwoSum obj = new TwoSum();
-        System.out.println(Arrays.toString(obj.getIndex(nums, target)));
-    }
+        int []arr = new int[]{1, 2, 4, 5};
+        int target = 6;
+        TwoSum twoSum = new TwoSum();
+        twoSum.twoSum(arr, target);
 
-    public int[] getIndex(int [] nums, int target)
-    {
-        HashMap<Integer, Integer> numberMap = new HashMap<>();
-        for(int i =0; i <nums.length; i++)
-        {
-            numberMap.put(nums[i], i);
-        }
-        for( int j =0; j<nums.length; j++)
-        {
-            int other = target - nums[j];
-            if(numberMap.containsKey(other) && numberMap.get(other) != j)
-            {
-                return new int[] { j, numberMap.get(other) };
+    }
+    public int[] twoSum(int[] nums, int target) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+
+            // Check if the complement exists in the map
+            if (map.containsKey(complement)) {
+                return new int[] { map.get(complement), i };
             }
+
+            // Add the current number and its index to the map
+            map.put(nums[i], i);
         }
-        return null;
+
+        // Return statement for completeness, though it's not expected to reach here
+        throw new IllegalArgumentException("No two sum solution");
     }
 }
