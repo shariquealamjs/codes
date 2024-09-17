@@ -3,7 +3,6 @@ public class AtoI {
         String s = "  -042";
         AtoI a = new AtoI();
         System.out.println(a.myAtoi(s));
-
     }
 
     public int myAtoi(String s) {
