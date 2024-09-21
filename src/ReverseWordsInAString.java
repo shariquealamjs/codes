@@ -7,6 +7,7 @@ public class ReverseWordsInAString {
 
     }
 
+    /*
     public String reverseWords(String s) {
         String reversed = "";
         String arr[] = s.trim().split("\\s");
@@ -30,4 +31,32 @@ public class ReverseWordsInAString {
         }
         return reversed;
     }
+
+
+     */
+
+    public String reverseWords(String s) {
+        String[] words = s.split("\\s+");
+        String reversed = "";
+
+        for(int i = words.length - 1; i >= 0; i--) {
+            reversed += words[i] + " ";
+        }
+        return reversed;
+    }
+    public String reverseWordsAndCharacter(String s) {
+
+        String[] words = s.split("\\s+");
+        String reversed = "";
+
+        for(int i = words.length - 1; i >= 0; i--) {
+            for(int j = words[i].length()-1; j >= 0; j--) {
+                reversed += words[i].charAt(j);
+            }
+            reversed += " ";
+        }
+        return reversed;
+
+    }
+
 }

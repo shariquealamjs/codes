@@ -29,8 +29,10 @@ public class ReverseString {
 
         while (! stack.isEmpty())
         {
-            System.out.print(stack.pop());
+            reversedString = reversedString + stack.pop();
         }
+
+        System.out.println("Reversed String using \"getReversedStringByStack\" method: " +reversedString);
     }
 
 
